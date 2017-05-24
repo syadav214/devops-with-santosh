@@ -1,0 +1,65 @@
+-----dockerfile creation as below------
+filename= dockerfile
+where to store file: root folder; like same location of index.go
+contents:
+# Start from a Debian image with the latest version of Go installed
+FROM golang
+
+# Copy the local package files to the container's workspace.
+ADD . $GOPATH/src/firstgosant
+
+#Set Environment for GOBIN
+ENV GOBIN $GOPATH/bin
+
+#Create config folder; /go/config in linux and /go/bin/config in window
+RUN mkdir /go/config
+
+#Copy contains of config
+RUN cp /go/src/firstgosant/config/* /go/config/
+
+#Go get packages
+RUN go get github.com/gorilla/mux
+RUN go get gopkg.in/mgo.v2
+RUN go get github.com/gorilla/handlers
+RUN go get github.com/dgrijalva/jwt-go
+RUN go get github.com/auth0/go-jwt-middleware
+
+#Compile main go file
+RUN go install $GOPATH/src/firstgosant/index.go
+
+#Run index exe
+ENTRYPOINT /go/bin/index
+
+# Document that the service listens on port 12345.
+EXPOSE 12345
+
+
+-----docker command---------
+#install docker in ubuntu
+sudo apt install docker
+sudo apt install docker.io
+
+#to create an image ;here the image name is dockerfile
+sudo docker build -t dockerfile .
+
+#to check images
+sudo docker images
+
+#to create a container; firstPort will host port which you can access using browser
+#secondPort which is exposed by the app; test is the name of container; dockerfile is the name of image
+sudo docker run --publish 6060:12345 --name test --rm dockerfile
+
+#to check the running container
+sudo docker ps -a
+
+#to stop container; test is the name of container
+sudo docker stop test
+
+#to remove imageid
+docker rmi  <IMAGE ID>
+
+#to remove container
+docker rm  <ContainerID>
+
+#to check files in container; san is the name of  container
+docker exec -t -i test /bin/bash

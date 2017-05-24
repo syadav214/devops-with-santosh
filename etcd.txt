@@ -1,0 +1,37 @@
+--Download etcd tar
+curl -L  https://github.com/coreos/etcd/releases/download/v2.0.9/etcd-v2.0.9-linux-amd64.tar.gz -o etcd-v2.0.9-linux-amd64.tar.gz
+
+--Extract tar
+tar xzvf etcd-v2.0.9-linux-amd64.tar.gz
+
+--Move etcd and etcdctl to bin folder from extracted folder
+sudo mv etcd /usr/local/bin
+sudo mv etcdctl /usr/local/bin
+
+--Start the etcd service. It will start the clusters
+etcd
+
+--Create a service text file as etcdSer.service
+[Unit]
+Description = etcd daemon
+
+[Service]
+Type = forking
+ExecStart = /usr/local/bin/etcd
+ExecStop = /usr/local/bin/etcd
+ExecReload = /usr/local/bin/etcd
+
+--Create file in any folder and move /etc/systemd/system
+sudo mv etcdSer.service /etc/systemd/system
+ 
+--Create a daemon or stop
+sudo systemctl start etcdSer
+sudo systemctl stop etcdSer
+
+--Display list of members
+etcdctl member list
+
+--Set and get Keys
+etcdctl set mykey "san"
+etcdctl get mykey
+

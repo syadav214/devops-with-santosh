@@ -1,0 +1,5 @@
+ls		:list the file
+ls -ltrh	:list the file with timestamp
+touch filename  :create a blank file
+cat -> filename :create a file with contains
+mv file1 file2	:rename the file
