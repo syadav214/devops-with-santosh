@@ -16,15 +16,17 @@ etcd
 Description = etcd daemon
 
 [Service]
-Type = forking
 ExecStart = /usr/local/bin/etcd
 ExecStop = /usr/local/bin/etcd
 ExecReload = /usr/local/bin/etcd
+Restart = on-failure
 
 --Create file in any folder and move /etc/systemd/system
 sudo mv etcdSer.service /etc/systemd/system
  
 --Create a daemon or stop
+sudo systemctl --system daemon-reload
+sudo systemctl enable etcdSer
 sudo systemctl start etcdSer
 sudo systemctl stop etcdSer
 
