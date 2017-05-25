@@ -3,3 +3,8 @@ ls -ltrh	:list the file with timestamp
 touch filename  :create a blank file
 cat -> filename :create a file with contains
 mv file1 file2	:rename the file
+
+
+--Incase of error of failed to start user service
+--It can be because of upstart service
+sudo  apt-get install systemd-sysv
