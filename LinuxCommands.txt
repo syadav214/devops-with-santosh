@@ -1,10 +1,28 @@
 ls		:list the file
 ls -ltrh	:list the file with timestamp
+mkdir		:create a folder
+mkdir -p 1/2/	:create a parent folder
+rmdir		:remove folder
+rm -rf		:remove non-empty folder
 touch filename  :create a blank file
 cat -> filename :create a file with contains
+cat filename
 mv file1 file2	:rename the file
-
+man		:manual of the command
+which		:path of executable
+chmod 755 file	:Change mod of file like read, write, executable (1-x, 4-r, 6-rw, 7-rwx)
+chmod ugoa+=-rwx:options to change the mode
+chgrp grpName file:change group name
+find		:find file or folder like find -name zyx -ls ; -ls to list the file
+locate file	:locate file or folder; it is very quick because of cache
+head -f file 	:show top data of file; f is a number
+tail -f file	:show bottom data of file; f can be number
+more file	:show more data of file
+less file	:show less data of file
+nano file	:edit file name
+adduser username:add user
+passwd username :set password for the user
 
 --Incase of error of failed to start user service
 --It can be because of upstart service
-sudo  apt-get install systemd-sysv
+sudo  apt-get install systemd-sysv	
