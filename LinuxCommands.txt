@@ -23,6 +23,13 @@ nano file	:edit file name
 adduser username:add user
 passwd username :set password for the user
 
+
+--server to serverr copy
+scp shtosan@192.168.56.102:~/test.txt .
+
+--install openssh to connect via ssh to a server
+sudo apt install openssh-server
+
 --Incase of error of failed to start user service
 --It can be because of upstart service
 sudo  apt-get install systemd-sysv	
