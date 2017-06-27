@@ -64,9 +64,4 @@ docker rm  <ContainerID>
 #to check files in container; san is the name of  container
 docker exec -t -i test /bin/bash
 
-#get latest registry image
-sudo docker pull registry:latest
-
-#run registry image for private registry
-sudo docker run -p 5000:5000 registry
 
