@@ -1,0 +1,10 @@
+sudo apt install python-pip
+sudo pip install -U nltk
+sudo pip install -U numpy
+sudo apt-get install python-tk
+
+------------------------------------
+NTLK downloads
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
+nltk.download('words')
