@@ -1,0 +1,18 @@
+#Public key for package management
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+
+#List for Mongo DB
+echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
+
+sudo apt-get update
+
+#Install Mongo DB
+sudo apt-get install -y mongodb-org
+
+#Create a folder in root folder
+/data/db
+
+#Permission to the folder
+chmod 777 /data
+
+
