@@ -1,5 +1,6 @@
 sudo apt install python-pip
 sudo pip install -U nltk
+sudo apt-get install python-numpy
 sudo pip install -U numpy
 sudo apt-get install python-tk
 
@@ -8,10 +9,11 @@ NTLK downloads
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
 nltk.download('words')
+nltk.download('treebank')
 
 nltk.download('gutenberg')
 nltk.download('genesis')
-nltk.download('corpora')
+nltk.download('maxent_ne_chunker')
 nltk.download('inaugural')
 nltk.download('nps_chat')
 nltk.download('webtext')
