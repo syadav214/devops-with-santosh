@@ -3,6 +3,7 @@ sudo pip install -U nltk
 sudo apt-get install python-numpy
 sudo pip install -U numpy
 sudo apt-get install python-tk
+sudo apt-get install python-matplotlib
 
 ------------------------------------
 NTLK downloads
