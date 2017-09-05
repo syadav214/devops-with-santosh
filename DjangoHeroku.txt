@@ -1,5 +1,6 @@
 --------------------Heroku---------------
 pip install pipenv
+pipenv install requests
 
 
 # The following will add our apt repository and install the CLI
@@ -25,3 +26,11 @@ heroku ps:scale web=1
 
 #open the app
 heroku open
+
+#push local changes; execute below after changes
+import requests
+
+git add .
+git commit -m "test"
+git push heroku master
+
