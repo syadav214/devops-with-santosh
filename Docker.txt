@@ -1,3 +1,34 @@
+
+-----docker command---------
+#install docker in ubuntu
+sudo apt install docker
+sudo apt install docker.io
+
+#to create an image ;here the image name is dockerfile
+sudo docker build -t dockerfile .
+
+#to check images
+sudo docker images
+
+#to create a container; firstPort will host port which you can access using browser
+#secondPort which is exposed by the app; test is the name of container; dockerfile is the name of image
+sudo docker run --publish 6060:12345 --name test --rm dockerfile
+
+#to check the running container
+sudo docker ps -a
+
+#to stop container; test is the name of container
+sudo docker stop test
+
+#to remove imageid
+docker rmi  <IMAGE ID>
+
+#to remove container
+docker rm  <ContainerID>
+
+#to check files in container; san is the name of  container
+docker exec -t -i test /bin/bash
+
 -----dockerfile creation as below------
 filename= dockerfile
 where to store file: root folder; like same location of index.go
@@ -32,36 +63,5 @@ ENTRYPOINT /go/bin/index
 
 # Document that the service listens on port 12345.
 EXPOSE 12345
-
-
------docker command---------
-#install docker in ubuntu
-sudo apt install docker
-sudo apt install docker.io
-
-#to create an image ;here the image name is dockerfile
-sudo docker build -t dockerfile .
-
-#to check images
-sudo docker images
-
-#to create a container; firstPort will host port which you can access using browser
-#secondPort which is exposed by the app; test is the name of container; dockerfile is the name of image
-sudo docker run --publish 6060:12345 --name test --rm dockerfile
-
-#to check the running container
-sudo docker ps -a
-
-#to stop container; test is the name of container
-sudo docker stop test
-
-#to remove imageid
-docker rmi  <IMAGE ID>
-
-#to remove container
-docker rm  <ContainerID>
-
-#to check files in container; san is the name of  container
-docker exec -t -i test /bin/bash
 
 
