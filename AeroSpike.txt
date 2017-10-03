@@ -1,0 +1,21 @@
+--download zipped file of aerospike
+aerospike-server-community-3.14.1.4-ubuntu16.04.tgz
+
+--extract
+tar -xvf aerospike-server-community-3.14.1.4-ubuntu16.04.tgz
+cd aerospike-server-community-3.14.1.4-ubuntu16.04
+
+-- will install the .deb packages
+sudo ./asinstall 
+
+--start service
+sudo service aerospike start
+
+--check aerospike info
+asinfo -v build
+asinfo
+
+--command line of aql
+/usr/bin/aql 
+
+
