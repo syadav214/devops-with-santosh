@@ -15,7 +15,24 @@ sudo service aerospike start
 asinfo -v build
 asinfo
 
+--create a namespace via config file; put a new name
+/etc/aerospike/aerospike.conf
+
+--check namespace
+show namespaces
+
+--check sets
+show sets
+
+--insert query; set is like a table. pk is mandatory. a,b are columns
+insert into <ns>.<set>(pk,a,b) VALUES (1,45,'as') 
+
+--select query
+select * from <ns>.<set> where pk=1
+
 --command line of aql
 /usr/bin/aql 
+
+
 
 
