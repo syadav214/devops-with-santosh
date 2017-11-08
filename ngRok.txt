@@ -1,0 +1,11 @@
+Don’t constantly redeploy your in-progress work to get feedback from clients.
+ngrok creates a secure public URL (https://yourapp.ngrok.io) to a local webserver on your machine. 
+Iterate quickly with immediate feedback without interrupting flow.
+
+Download from https://ngrok.com/download
+
+#For windows
+Go to downloaded folder
+Open cmd and Type below command
+ngrok http 80
+
