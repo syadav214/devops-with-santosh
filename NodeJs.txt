@@ -14,3 +14,14 @@ sudo ln -s /usr/bin/nodejs /usr/bin/node
 
 --create project folder 
 express projectName -e
+
+
+--Install React
+npm install -g create-react-app
+
+
+npm init
+npm install --save react react-dom
+npm install -g babel --save
+npm install webpack --save
+npm install webpack-dev-server --save

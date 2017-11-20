@@ -23,6 +23,9 @@ sudo docker stop test
 #to remove imageid
 docker rmi  <IMAGE ID>
 
+#to remove unused images
+docker image prune
+
 #to remove container
 docker rm  <ContainerID>
 
