@@ -1,24 +1,13 @@
+
+#Install pip
 sudo apt install python-pip
-sudo pip install -U nltk
-sudo apt-get install python-numpy
-sudo pip install -U numpy
-sudo apt-get install python-tk
-sudo apt-get install python-matplotlib
 
-------------------------------------
-NTLK downloads
-nltk.download('punkt')
-nltk.download('averaged_perceptron_tagger')
-nltk.download('words')
-nltk.download('treebank')
+#Install Django
+sudo apt install python-django
 
-nltk.download('gutenberg')
-nltk.download('genesis')
-nltk.download('maxent_ne_chunker')
-nltk.download('inaugural')
-nltk.download('nps_chat')
-nltk.download('webtext')
+#Create project
+django-admin startproject mysite
 
 
-
-
+#Run the project
+python manage.py runserver
