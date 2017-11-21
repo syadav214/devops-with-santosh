@@ -11,3 +11,6 @@ django-admin startproject mysite
 
 #Run the project
 python manage.py runserver
+
+#Create app 
+python manage.py startapp sampleapp
