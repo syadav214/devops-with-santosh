@@ -1,0 +1,7 @@
+Download and install R-3.4.2-win.exe
+Download and install rStudio
+Download and install python-3.6.3
+Download and install Anaconda3-5.0.1-Windows-x86_64
+
+
+Get CSV file and start building your model
