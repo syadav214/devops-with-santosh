@@ -1,4 +1,6 @@
-Installation Part
+There are two ways to get started with ReactJS.
+
+First way=>
 
 install npm and node
 //web pack used to minify and combine css and js file; plus image files
@@ -14,5 +16,10 @@ webpack.config.js => has dependencies and files from where browser will start re
 HTML file => a template to with all required elements
 JSX file => which component we want to display and how they behave
 
+Second way=>
+npm install -g create-react-app
+create-react-app my-app
+check package.json file
+now you can run with npm start
 
 
