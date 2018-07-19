@@ -1,0 +1,25 @@
+npm install -g typescript
+create a .ts file with your typescript code
+compile using command=> tsc fileName.ts
+you will get fileName.js with JavaScript standard
+and you use that file in your project.
+
+// Sample code
+fileName: greeter.ts
+function greeter(person) {
+    return "Hello, " + person;
+}
+
+let user = "Jane User";
+
+document.body.innerHTML = greeter(user);
+
+fileName: greeter.html 
+<!DOCTYPE html>
+<html>
+    <head><title>TypeScript Greeter</title></head>
+    <body>
+        <script src="greeter.js"></script>
+    </body>
+</html>
+
