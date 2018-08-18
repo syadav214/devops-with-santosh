@@ -2,7 +2,7 @@
 sudo apt-get install nodejs
 sudo apt install npm
 
---Run a js file
+--Start NodeServer
 node file.js
 
 --Install express globally
