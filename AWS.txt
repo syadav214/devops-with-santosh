@@ -1,0 +1,24 @@
+1. Create a lambda function
+    - enter a name
+    - choose runtime as node8
+    - choose an existing role such as 
+        for dev => authenticator-dev-lambdaRole
+        for stage => authenticator-stage-lambdaRole
+        for prod => authenticator-prod-lambdaRole
+
+2. Cloud watch
+    - you will have policy of eu-west 
+    - add VPC access policy
+
+3. Create a api
+    - enter a name
+    - add a method in '/' resource
+    - go to method and go to method request
+    - enable api key
+    *******************
+    - create a key
+    - enter a name
+    - keep auto generated
+    *******************
+    - create a usage plan
+    - associated key and api
