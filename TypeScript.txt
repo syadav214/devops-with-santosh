@@ -23,3 +23,11 @@ fileName: greeter.html
     </body>
 </html>
 
+#create tsconfig file
+tsc --init
+
+#compile whole project
+tsc
+
+#create tslint config file
+./node_modules/tslint/bin/tslint --init
