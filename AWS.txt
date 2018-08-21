@@ -22,3 +22,11 @@
     *******************
     - create a usage plan
     - associated key and api
+
+4. Create a domain fot the api
+  - go to api gateway and create custom domain
+  - put your domain name
+  - save and you will get cloudfront url
+  - go to Route 53 and search for the domain
+  - add a record set for the domain
+  - select IPv4 and put alias value as cloudfront url
