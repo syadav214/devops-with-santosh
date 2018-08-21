@@ -23,7 +23,7 @@
     - create a usage plan
     - associated key and api
 
-4. Create a domain fot the api
+4. Create a domain for the api
   - go to api gateway and create custom domain
   - put your domain name
   - save and you will get cloudfront url
