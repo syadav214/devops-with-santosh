@@ -28,6 +28,7 @@
   - go to api gateway and create custom domain
   - put your domain name
   - save and you will get cloudfront url
+  - save Base Path Mappings
   - go to Route 53 and search for the domain
   - add a record set for the domain
   - select IPv4 and put alias value as cloudfront url
