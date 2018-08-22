@@ -15,6 +15,7 @@
     - add a method in '/' resource
     - go to method and go to method request
     - enable api key
+    - deploy the api and give a stage name from Actions
     *******************
     - create a key
     - enter a name
