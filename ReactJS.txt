@@ -23,3 +23,14 @@ check package.json file
 now you can run with npm start
 
 
+ReactJS with TypeScript =>
+
+create-react-app my-app --scripts-version=react-scripts-ts
+
+1. tsconfig.json declares the TypeScript options. It sits at the root of a TypeScript project and indicates the compiler settings and files to include.
+2. tslint.json is the linter settings to be used by TSLint.
+3. public is the folder of static assets that will be served such as the HTML document and manifest file.
+4. src holds the app UI code. This includes our TypeScript components and CSS styling. The traditional index.js file has been replaced by index.tsx as the entry point.
+
+
+
