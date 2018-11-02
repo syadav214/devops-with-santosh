@@ -12,16 +12,17 @@
 
 3. Create a api
     - enter a name
-    - add a method in '/' resource
+    - add a method in '/' resource or create a resource for routes like 'sheets'
     - go to method and go to method request
     - enable api key
     - deploy the api and give a stage name from Actions
     *******************
     - create a key
     - enter a name
-    - keep auto generated
+    - keep auto generated    
     *******************
     - create a usage plan
+    - Add API stage
     - associated key and api
 
 4. Create a domain for the api
