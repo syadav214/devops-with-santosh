@@ -15,6 +15,7 @@
     - add a method in '/' resource or create a resource for routes like 'sheets'
     - go to method and go to method request
     - enable api key
+    - enable cors
     - deploy the api and give a stage name from Actions
     *******************
     - create a key
