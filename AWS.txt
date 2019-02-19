@@ -34,3 +34,18 @@
   - go to Route 53 and search for the domain
   - add a record set for the domain
   - select IPv4 and put alias value as cloudfront url
+
+5. Web hosting of SPA like React
+   - create AWS S3 bucket with 3 folder (dev, stage, prod) and upload file in one of it
+   - in cloudfront
+        Origin Domain Name = bucket
+        Origin Path = /prod
+        Default Root Object = index.html
+        Update bucket policy = yes
+   - Get cloudfront url
+   - go to Route53
+   - create hosted zone with your domain
+   - get dns from aws and put into your registar
+   - create record set with IPv4 and cloudfront url
+
+
