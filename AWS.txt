@@ -42,6 +42,7 @@
         Origin Path = /prod
         Default Root Object = index.html
         Update bucket policy = yes
+    (invalidation using => Object Paths /*)
    - Get cloudfront url
    - go to Route53
    - create hosted zone with your domain
