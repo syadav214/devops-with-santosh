@@ -16,4 +16,8 @@ sudo ln -s /usr/bin/nodejs /usr/bin/node
 express projectName -e
 
 
+-- publish your package to npm
+go to your repo
+npm login
+npm publish
 
