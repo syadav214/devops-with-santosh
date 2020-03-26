@@ -1,2 +1,3 @@
 netstat -a -o -n
+netstat -a -o -n | grep :80
 taskkill /F /PID <pid>
