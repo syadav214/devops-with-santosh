@@ -36,6 +36,7 @@
   - select IPv4 and put alias value as cloudfront url
 
 5. Web hosting of SPA like React
+   - disclaimer it will take more than 1.5 hrs to get served on internet via S3 & Cloudfront
    - create AWS S3 bucket with 3 folder (dev, stage, prod) and upload file in one of it
    - in cloudfront
         Origin Domain Name = bucket
