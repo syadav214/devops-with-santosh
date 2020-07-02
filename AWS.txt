@@ -49,5 +49,6 @@
    - create hosted zone with your domain
    - get dns from aws and put into your registar
    - create record set with IPv4 and cloudfront url
+   - create public certificate and add CNAME from there
 
 
