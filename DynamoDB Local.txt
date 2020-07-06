@@ -3,6 +3,7 @@ https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.D
 
 Below command will run dynamodb on local
 java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb
+on cmd => java -D"java.library.path"=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb
 
 Install below to get UI to manage DB
 npm i dynamodb-admin -g
