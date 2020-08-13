@@ -1,0 +1,7 @@
+1. Downlad Solr from https://lucene.apache.org/solr/downloads.html
+2. if windows then get zip and extract
+3. go to bin folder and run solr start -p 8984
+4. if u want to stop then run solr stop -p 8984
+5. if you get JAVA_HOME error check u can edit solr.cmd file.
+e.g. set "JAVA_HOME=C:\Program Files\Java\jdk1.8.0_144"
+6. examples apps: solr -e techproducts
