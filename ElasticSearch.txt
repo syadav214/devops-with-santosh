@@ -1,0 +1,39 @@
+1. Downlad Elastic Search from https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.8.1-windows-x86_64.zip
+2. if windows then get zip and extract
+3. go to bin folder and run elasticsearch.bat
+4. then u can browse http://localhost:9200/
+curl -X GET "localhost:9200/_cat/health?v&pretty"
+
+
+5. curl -X PUT "localhost:9200/customer/_doc/1?pretty" -H 'Content-Type: application/json' -d'
+{
+  "name": "John Doe"
+}
+'
+this will give u default data of existing index data.
+
+6. Download the accounts.json sample data set. The documents in this randomly-generated data set
+ represent user accounts with the following information:
+ {"index":{"_id":"1"}}
+{"account_number":1,"balance":39225,"firstname":"Amber","lastname":"Duke","age":32,"gender":"M","address":"880 Holmes Lane","employer":"Pyrami","email":"amberduke@pyrami.com","city":"Brogan","state":"IL"}
+{"index":{"_id":"6"}}
+{"account_number":6,"balance":5686,"firstname":"Hattie","lastname":"Bond","age":36,"gender":"M","address":"671 Bristol Street","employer":"Netagy","email":"hattiebond@netagy.com","city":"Dante","state":"TN"}
+
+7. bulk import
+curl -H "Content-Type: application/json" -XPOST "localhost:9200/bank/_bulk?pretty&refresh" --data-binary "@accounts.json"
+curl "localhost:9200/_cat/indices?v"
+
+8. query it
+curl -X GET "localhost:9200/bank/_search?pretty" -H 'Content-Type: application/json' -d'
+{
+  "query": { "match": { "address": "mill lane" } }
+}
+'
+
+9. phrase search rather than matching individual terms
+curl -X GET "localhost:9200/bank/_search?pretty" -H 'Content-Type: application/json' -d'
+{
+  "query": { "match_phrase_prefix": { "address": "mill" } }
+}
+'
+
