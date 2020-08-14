@@ -1,0 +1,5 @@
+browse 
+http://localhost:8055/#!/infra
+
+create s3 bucket on local stack
+aws --endpoint-url=http://localhost:4572 s3 mb s3://backbone-clone-default
