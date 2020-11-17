@@ -1,0 +1,8 @@
+Setup JAVA
+JAVA Env variable
+Setup Maven
+MAVEN Env variable
+Run 'mvn clean install' on project
+Put settings file (credentials file) on C:\Users\UserName\.m2 folder
+Put env variables as APP_IDENTITY_CLIENT_ID in edit configurations
+Path to JAR
