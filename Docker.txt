@@ -29,6 +29,9 @@ docker image prune
 #to remove container
 docker rm  <ContainerID>
 
+#to remove all containers
+docker system prune
+
 #to check files in container; san is the name of  container
 docker exec -t -i test /bin/bash
 
