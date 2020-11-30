@@ -51,4 +51,12 @@
    - create record set with IPv4 and cloudfront url
    - create public certificate and add CNAME from there
 
+6. SSH to EC2
+   - Open an SSH client(Gitbash on winddows).
+   - Locate your private key file. The key used to launch this instance is filename.pem
+   - Run this command, if necessary, to ensure your key is not publicly viewable.
+     chmod 400 filename.pem
+   - Connect to your instance using its Public DNS:
+     ssh -i "filename.pem" ec2-user@ec2-3-22-97-8899.compute-1.amazonaws.com
+
 
