@@ -1,15 +1,22 @@
-version: '3.2'
+version: '2.1'
+
 services:
   localstack:
-    image: localstack/localstack:latest
-    container_name: localstack_demo
+    container_name: aws-localstack
+    image: localstack/localstack
+    network_mode: bridge
     ports:
-      - '4563-4599:4563-4599'
-      - '8055:8080'
+      - "4566-4597:4566-4597"
+      - "${PORT_WEB_UI-8080}:${PORT_WEB_UI-8080}"
     environment:
-      - SERVICES=s3,sqs,dynamodb
+      - SERVICES=kinesis,dynamodb,s3,lambda,sqs,ec2
       - DEBUG=1
       - DATA_DIR=/tmp/localstack/data
+      - PORT_WEB_UI=8081
+      - LAMBDA_EXECUTOR=${LAMBDA_EXECUTOR- }
+      - KINESIS_ERROR_PROBABILITY=${KINESIS_ERROR_PROBABILITY- }
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - HOST_TMP_FOLDER=/temp
     volumes:
-      - './.localstack:/tmp/localstack'
-      - '/var/run/docker.sock:/var/run/docker.sock'
+      - "${TMPDIR:-/tmp/localstack}:/tmp/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
