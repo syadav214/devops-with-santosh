@@ -2,12 +2,12 @@
   "name": { "S": "SaSa" },
   "user_id": { "S": "400ddd9&jiuwjw7" },
   "scopes": {
-    "SS": [
-      "create:customers",
-      "create:orders",
-      "create:products",
-      "delete:customers",
-      "delete:orders"
+    "L": [
+      { "S": "create:customers" },
+      { "S": "create:orders" },
+      { "S": "create:products" },
+      { "S": "delete:customers" },
+      { "S": "delete:orders" }
     ]
   }
 }
