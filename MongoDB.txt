@@ -15,4 +15,7 @@ sudo apt-get install -y mongodb-org
 #Permission to the folder
 chmod 777 /data
 
+mongoexport -d dbname -c collection --out collection.json
+mongoimport --uri connString --collection collection  --file collection.json
+
 
