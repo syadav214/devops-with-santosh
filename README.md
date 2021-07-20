@@ -1,5 +1,4 @@
-# How2Configure
-Steps to configure tools and framework
+Practice DevOps with Steps to configure tools and framework
 
 1. DotNetCore
 2. Docker
