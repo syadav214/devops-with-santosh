@@ -1,9 +1,8 @@
 Practice DevOps with Steps to configure tools and framework
 
-1. DotNetCore
+1. Kubernetes
 2. Docker
-3. etcd
-4. confd
+3. AWS
+4. Gitlab CI
 5. Linux Commands
-6. Docker Registry
 
