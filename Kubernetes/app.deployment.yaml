@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-app
+  labels:
+    app: react-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: react-app
+  template:
+    metadata:
+      labels:
+        app: react-app
+    spec:
+      terminationGracePeriodSeconds: 15
+      imagePullSecrets:
+      - name: "gitlab-registry"
+      containers:
+        - name: simple-react-app
+          image: {{ .Values.appImage }}
+          env:
+            - name: NODE_ENV
+              value: production
+            - name: PORT
+              value: 3000
+            - name: HOSTNAME
+              value: http://example.com
+          ports:
+            - containerPort: 3000
+              name: http
+          livenessProbe:
+            exec:
+              command:
+                - cat
+                - /tmp/healthy
+            initialDelaySeconds: 5
+            periodSeconds: 15
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "50m"
+            limits:
+              memory: "512Mi"
+              cpu: "100m"
