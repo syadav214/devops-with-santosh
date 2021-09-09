@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: MyApp
-  ports:
+  ports: #default type is ClusterIP
     - name: http
       nodePort: 30475
       port: 8089
