@@ -2,3 +2,8 @@ netstat -a -o -n
 netstat -a -o -n | grep :80
 netstat -ano | findstr :<PORT>
 taskkill /F /PID <pid>
+
+
+# Linux
+ lsof -i tcp:<PORT>
+ kill -9  <PID>
