@@ -51,7 +51,13 @@
    - create record set with IPv4 and cloudfront url
    - create public certificate and add CNAME from there
 
-6. SSH to EC2
+6. AWS Certificate Manager
+    - Create record in Route 53
+    - Use the record to create certificate
+    - Create CNAME from the certificate
+    - Map the certificate in Cloudfront/LB
+    
+7. SSH to EC2
    - Open an SSH client(Gitbash on winddows).
    - Locate your private key file. The key used to launch this instance is filename.pem
    - Run this command, if necessary, to ensure your key is not publicly viewable.
