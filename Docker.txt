@@ -71,7 +71,8 @@ ENTRYPOINT /go/bin/index
 EXPOSE 12345
 
 
--------------------------NODE------------------------
+-------------------------NODE------------------------ (ref: https://snyk.io/blog/10-best-practices-to-containerize-nodejs-web-applications-with-docker/?utm_campaign=AOM-2022&utm_medium=Paid-Email&utm_source=Cooperpress-Node-Weekly&utm_content=10-best-practices-to-containerize-nodejs-web-applications-with-docker)
+
 FROM node:16.17.0-bullseye-slim
 
 RUN apt-get update && apt-get install -y --no-install-recommends dumb-init
