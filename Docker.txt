@@ -71,3 +71,17 @@ ENTRYPOINT /go/bin/index
 EXPOSE 12345
 
 
+-------------------------NODE------------------------
+FROM node:16.17.0-bullseye-slim
+
+RUN apt-get update && apt-get install -y --no-install-recommends dumb-init
+ENV NODE_ENV production
+ENV NPM_TOKEN 1234
+WORKDIR /usr/src/app
+COPY --chown=node:node . .
+#RUN npm ci --only=production
+RUN echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc && \
+   npm ci --only=production
+USER node
+CMD ["dumb-init", "node", "server.js"]
+
