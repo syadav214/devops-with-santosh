@@ -1,0 +1,5 @@
+#Merge conflict
+git pull origin master
+git checkout santosh/feat/company-43
+git merge master
+git push -u origin santosh/feat/company-43
