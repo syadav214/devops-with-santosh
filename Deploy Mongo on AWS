@@ -35,13 +35,13 @@
 19. Install any mongo client on local system and connect to the mongo server
 20. Create a user to for admin db with below details
     - user = root
-    - pwd = 98Hus@980kIKHF87yyt%EFGFD
+    - pwd = <COMPLEX PWD>
     - role = userAdminAnyDatabase
     - db = admin
 21. Create a database for your application, such appdb
 22. Create a user to for admin db with below details
     - user = party
-    - pwd = KIOJKJ&u8uGG%$%VSUSInsjsi
+    - pwd = <COMPLEX PWD>
     - role = readWrite
     - db = appdb
 23. Go to the server and edit sudo vi /etc/mongod.conf
