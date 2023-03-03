@@ -1,0 +1,45 @@
+1. EC2 Launch an Instance
+2. Provide name for the instance
+3. Create Key Pair (generate .ppk for putty or .pem for openSSH)
+4. Leave other option as it is
+5. Click on Launch Instance
+6. Go the instance and browse to its' security groups
+7. Click on Edit Inbound rules
+8. Add rule -> Type = Custom TCP. Port = 5432. Source = Anywhere or Select 0.0.0.0/0. Then Save the rule
+9. Copy Public IP and Open Putty to connect to the server.
+  - Put user and IP
+  - Port = 22 (this is ssh port)
+  - Go to Connection -> SSH -> Auth. and Browse to .ppk file and then open it
+  - Click on Menu bar of putty window then right click. Go to change settings and provide session name and save it.
+
+10. Check Linux => grep ^NAME  /etc/*release
+11. Run install command => sudo yum install postgresql-server -y
+12. Initialize DB => sudo postgresql-setup initdb
+13. Check which init system your platform uses => ps --no-headers -o comm 1
+14. Execute below command to start mongo server for systemd
+    - sudo systemctl start postgresql
+    - sudo systemctl enable postgresql
+    - sudo systemctl status postgresql  (this is to check status)
+    - sudo systemctl restart postgresql (this is to restart incase of conf changes)
+    - sudo chkconfig postgresql on (this is to restart postgres on server restarts)
+15. Need to create db and user => sudo -u postgres psql
+    - CREATE DATABASE appdb; (this to create your db)
+    - ALTER USER postgres PASSWORD 'YOUR_PASSWORD'; (this to create postgresql)
+16. sudo vi /var/lib/pgsql/data/postgresql.conf
+17. go to listen_addresses. and change it to "*" and restart the mongod
+18. sudo vi /var/lib/pgsql/data/pg_hba.conf
+19. go to  TYPE  DATABASE   USER       ADDRESS     METHOD
+    -      host    all      all        0.0.0.0/0   md5   (this for all db and all users)
+    -      host    appdb    postgres   0.0.0.0/0   md5   (Recommended: this for all specific db and user)
+    - and restart the mongod
+20. Install any postgres client on local system and connect to the pg server
+
+
+
+
+
+
+
+
+
+
