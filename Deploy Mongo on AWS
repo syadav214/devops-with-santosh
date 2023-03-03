@@ -40,7 +40,7 @@
     - db = admin
 21. Create a database for your application, such appdb
 22. Create a user to for admin db with below details
-    - user = party
+    - user = appdb
     - pwd = <COMPLEX PWD>
     - role = readWrite
     - db = appdb
