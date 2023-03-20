@@ -1,0 +1,65 @@
+10 Steps from Create EC2
+
+11. Get nginx signing key => sudo wget http://nginx.org/keys/nginx_signing.key
+12. Add key => sudo apt-key add nginx_signing.key
+13. cd /etc/apt
+14. Execute below command to edit sources.list
+    - sudo vi sources.list
+        deb http://nginx.org/packages/ubuntu bionic nginx
+        deb-src http://nginx.org/packages/ubuntu bionic nginx
+15. Install nginx
+    - sudo apt-get update
+    - sudo apt-get install nginx
+    - sudo systemctl start nginx.service
+    - udo systemctl status nginx.service
+16. Configure nginx
+    - /etc/nginx/conf.d
+    - sudo vi default.conf
+        server {
+        listen       80;
+        server_name  diffchecker.in;
+
+        #access_log  /var/log/nginx/host.access.log  main;
+
+        location / {
+            proxy_pass http://127.0.0.1:3000;
+        }
+
+        #error_page  404              /404.html;
+
+        # redirect server error pages to the static page /50x.html
+        #
+        #error_page   500 502 503 504  /50x.html;
+        #location = /50x.html {
+        #    root   /usr/share/nginx/html;
+        #}
+
+        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+        #
+        #location ~ \.php$ {
+        #    root           html;
+        #    fastcgi_pass   127.0.0.1:9000;
+        #    fastcgi_index  index.php;
+        #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+        #    include        fastcgi_params;
+        #}
+
+        # deny access to .htaccess files, if Apache's document root
+        # concurs with nginx's one
+        #
+        #location ~ /\.ht {
+        #    deny  all;
+        #}
+    }
+
+17. sudo nginx -s reload
+
+
+
+
+
+
+
+
+
+

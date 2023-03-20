@@ -1,0 +1,15 @@
+1. EC2 Launch an Instance
+2. Provide name for the instance
+3. Create Key Pair (generate .ppk for putty or .pem for openSSH)
+4. Leave other option as it is
+5. Click on Launch Instance
+6. Go the instance and browse to its' security groups
+7. Click on Edit Inbound rules
+8. Add rule -> Type = Custom TCP. Port = 27017. Source = Anywhere or Select 0.0.0.0/0. Then Save the rule
+9. Copy Public IP and Open Putty to connect to the server.
+  - Put user and IP
+  - Port = 22 (this is ssh port)
+  - Go to Connection -> SSH -> Auth. and Browse to .ppk file and then open it
+  - Click on Menu bar of putty window then right click. Go to change settings and provide session name and save it.
+
+10. Check Linux => grep ^NAME  /etc/*release
