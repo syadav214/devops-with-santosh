@@ -1,0 +1,2 @@
+1. Reflected XSS into HTML context with nothing encoded
+Enter in textbox <script>alert(1)</script>
