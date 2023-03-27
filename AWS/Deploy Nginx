@@ -53,6 +53,28 @@
     }
 
 17. sudo nginx -s reload
+18. config with load balancing
+upstream frontend {
+    server IP:3000;
+}
+
+upstream backend {
+    server IP:3002;
+}
+
+server {
+    server_name example.com www.example.com;
+    location / {
+        proxy_pass http://frontend;
+    }
+}
+
+server {
+    server_name api.example.com;
+    location / {
+        proxy_pass http://backend;
+    }
+}
 
 
 
