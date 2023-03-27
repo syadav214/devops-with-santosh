@@ -4,3 +4,7 @@ Modify the  parameter, giving it the value '+OR+1=1--
 2. SQL injection vulnerability allowing login bypass
 Find the username and then do SQL injection
 Modify the username parameter, giving it the value: administrator'--
+
+3. Lab: SQL injection UNION attack, determining the number of columns returned by the query
+Modify the category parameter to add an additional column containing a null value:
+'+UNION+SELECT+NULL,NULL,NULL--
