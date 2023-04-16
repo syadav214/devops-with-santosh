@@ -1,0 +1,12 @@
+1. Add below content in crontab to run every day at 01:30 AM (UTC will be 08:00 PM)
+
+0  20   * * *   root /usr/bin/sh /home/ubuntu/script/pg_backup.sh >/dev/null 2>&1
+    
+    - sudo vi  /etc/crontab
+
+2. Restart the cron
+    - sudo systemctl restart cron
+
+3. Check Cron logs
+    - tail -f /var/log/syslog
+    - tail -f /var/log/syslog | grep pg_backup
