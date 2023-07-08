@@ -76,8 +76,22 @@ server {
     }
 }
 
+19. Rate limiting
+limit_req_zone $binary_remote_addr zone=ip:10m rate=60r/m;
 
+server {
+    listen 80;
+    location / {
+        limit_req zone=ip burst=50 delay=40;
+        proxy_pass http://website;
+    }
+}
 
+"""
+The first 40 requests (the value of delay) are proxied by NGINX Plus without delay. 
+The next 10 requests (burst - delay) are delayed so that the defined rate of 60 r/m is not exceeded. 
+The next requests are rejected because the total burst size has been exceeded. Subsequent requests are delayed.
+"""
 
 
 
