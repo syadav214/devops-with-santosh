@@ -12,6 +12,10 @@
     - sudo apt-get install nginx
     - sudo systemctl start nginx.service
     - sudo systemctl status nginx.service
+# we get issue of libssl1.1 then install it
+wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+
 16. Configure nginx
     - /etc/nginx/conf.d
     - sudo vi default.conf
@@ -96,6 +100,8 @@ The next requests are rejected because the total burst size has been exceeded. S
 
 * CERTIFICATE
 https://www.nginx.com/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/
+server_name diffchecker.in www.diffchecker.in
+sudo certbot --nginx -d diffchecker.in -d www.diffchecker.in
 
 
 
