@@ -40,6 +40,15 @@ sudo systemctl restart apache2
 OR
 sudo systemctl reload apache2
 
+Provide access to outside access to mysql
+/etc/mysql/mysql.conf.d/mysqld.cnf -> bind-address to 0.0.0.0
+sudo service mysql restart
+
+#back up 
+sudo mysqldump -u root -p [db_name] > [db_name].sql
+#restore
+mysql -u root -p [db_name] < [db_name].sql
+
 13. Install certbot
 sudo apt-get update
 sudo apt install certbot python3-certbot-apache
